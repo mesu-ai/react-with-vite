@@ -15,12 +15,11 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/contact-list');
+    navigate('/contacts');
 
     console.log(loginData);
 
-    
-    
+
   }
 
  

@@ -10,6 +10,8 @@ import ErrorPage from './error-page.jsx';
 import LoginPage from './routes/LoginPage.jsx';
 import ContactList from './routes/ContactList.jsx';
 import RegisterPage from './routes/RegisterPage.jsx';
+import EditContact from './routes/EditContact.jsx';
+import AddContact from './routes/AddContact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,14 +24,32 @@ const router = createBrowserRouter([
     element: <LoginPage/>,
     errorElement: <ErrorPage/>
   },
-  {
-    path: "/contact-list",
-    element: <ContactList/>,
-    errorElement: <ErrorPage/>
-  },
+  
   {
     path: "/register",
     element: <RegisterPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/contacts",
+    element: <ContactList/>,
+    errorElement: <ErrorPage/>,
+    // children:[
+    //   {
+    //     path: ":id",
+    //     element: <EditContact/>,
+    //     // errorElement: <ErrorPage/>
+    //   },
+    // ]
+  },
+  {
+    path: "/contact/edit/:id",
+    element: <EditContact/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/contact/add",
+    element: <AddContact/>,
     errorElement: <ErrorPage/>
   },
   {
